@@ -1,0 +1,26 @@
+name: CI Test
+
+on:
+  pull_request_target:
+    types: [opened, edited, reopened]
+  push:
+    branches:
+      - '**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.x'
+      - name: Install Dependencies
+        run: npm install --force
+      - run: npm run cov
+        env:
+          GITHUB_BRANCH: ${{ github.ref }}

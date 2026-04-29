@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "target": "ES2018",
+    "module": "CommonJS",
+    "declaration": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "rootDir": ".",
+    "outDir": "lib",
+    "strict": true,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "lib": ["dom", "es2020", "es5", "ESNext.String"],
+    "inlineSources": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "common/*": ["src/common/*"],
+      "components/*": ["src/components/*"],
+      "pageActions/*": ["src/actions/*"],
+      "extensions/*": ["src/extensions/*"],
+      "browserActions/*": ["src/browser/actions/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["./node_modules/*", "lib", "es"]
+}
